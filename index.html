@@ -1,61 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Dileep Kumar Patel | Backend Developer</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body { font-family: Arial; background:#f4f6f8; margin:0; }
-    .container { max-width:900px; margin:auto; background:#fff; padding:20px; }
-    h1,h2 { color:#2c3e50; }
-    .tag { display:inline-block; background:#e3f2fd; padding:5px 10px; margin:5px; border-radius:4px; }
-    .status-live { color:green; font-weight:bold; }
-    .status-dev { color:orange; font-weight:bold; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dileep Patel | Senior Backend Developer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --primary: #00d2ff; --bg: #0d1117; --card: #161b22; --text: #c9d1d9; }
+        body { background-color: var(--bg); color: var(--text); font-family: 'Segoe UI', Roboto, sans-serif; }
+        .accent { color: var(--primary); }
+        .hero { padding: 100px 0; border-bottom: 1px solid #30363d; background: radial-gradient(circle at top right, rgba(0,210,255,0.05), transparent); }
+        .project-card { 
+            background: var(--card); border: 1px solid #30363d; border-radius: 12px; 
+            transition: all 0.3s ease; height: 100%; padding: 25px;
+        }
+        .project-card:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .tech-stack span { font-size: 0.75rem; background: rgba(0,210,255,0.1); color: var(--primary); padding: 4px 10px; border-radius: 4px; margin-right: 5px; }
+        .btn-git { border: 1px solid var(--primary); color: var(--primary); border-radius: 20px; padding: 5px 20px; text-decoration: none; transition: 0.3s; }
+        .btn-git:hover { background: var(--primary); color: #000; }
+        .section-header { margin-bottom: 50px; font-weight: 800; border-left: 5px solid var(--primary); padding-left: 15px; }
+    </style>
 </head>
 <body>
 
-<div class="container">
-  <h1>👋 Dileep Kumar Patel</h1>
-  <p><b>Backend Developer</b> | PHP | Laravel | MySQL | FastAPI</p>
+<header class="hero">
+    <div class="container text-center text-md-start">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <h1 class="display-3 fw-bold text-white">Dileep Kumar Patel</h1>
+                <h4 class="accent mb-4">PHP Backend Architect | Laravel Specialist</h4>
+                <p class="lead mb-4">Building high-performance CRM systems and scalable REST APIs with 3.5+ years of industry experience.</p>
+                <div class="d-flex gap-3 justify-content-center justify-content-md-start">
+                    <a href="https://github.com/Dileepkumarpatelpalamu" class="btn-git"><i class="fab fa-github me-2"></i>GitHub Profile</a>
+                    <a href="mailto:pateldileep51@gmail.com" class="btn-git"><i class="fas fa-envelope me-2"></i>Email Me</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 
-  <h2>Professional Summary</h2>
-  <p>Backend Developer with 3+ years of experience in PHP & Laravel.
-     Worked on CRM systems, RBAC, Audit Logs and REST APIs.</p>
+<main class="container py-5">
+    <h2 class="section-header text-white">Featured Projects <span class="fs-6 fw-normal text-muted">(From GitHub)</span></h2>
+    
+    <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+            <div class="project-card">
+                <h4 class="text-white mb-3">Enterprise CRM Engine</h4>
+                <p class="small">A robust backend architecture for C-Zentrix CRM handling lead lifecycles, ticket automation, and multi-tenant data structures.</p>
+                <div class="tech-stack mb-4">
+                    <span>Laravel</span> <span>MySQL</span> <span>Redis</span>
+                </div>
+                <a href="https://github.com/Dileepkumarpatelpalamu" class="btn-git">Source Code</a>
+            </div>
+        </div>
 
-  <h2>Skills</h2>
-  <span class="tag">PHP</span>
-  <span class="tag">Laravel</span>
-  <span class="tag">MySQL</span>
-  <span class="tag">REST API</span>
-  <span class="tag">FastAPI</span>
-  <span class="tag">Docker</span>
+        <div class="col-md-6 col-lg-4">
+            <div class="project-card">
+                <h4 class="text-white mb-3">RBAC Auth Module</h4>
+                <p class="small">Secure Role-Based Access Control system using JWT. Includes audit logging to track every administrative action and user activity.</p>
+                <div class="tech-stack mb-4">
+                    <span>PHP 8.x</span> <span>JWT</span> <span>Security</span>
+                </div>
+                <a href="https://github.com/Dileepkumarpatelpalamu" class="btn-git">Source Code</a>
+            </div>
+        </div>
 
-  <h2>Projects & Deployment Status</h2>
+        <div class="col-md-6 col-lg-4">
+            <div class="project-card">
+                <h4 class="text-white mb-3">Student Ledger System</h4>
+                <p class="small">Complete management of academic records with optimized MySQL schemas for fast reporting and CRUD operations.</p>
+                <div class="tech-stack mb-4">
+                    <span>Core PHP</span> <span>MySQL</span> <span>Bootstrap</span>
+                </div>
+                <a href="https://github.com/Dileepkumarpatelpalamu" class="btn-git">Source Code</a>
+            </div>
+        </div>
 
-  <h3>CRM System</h3>
-  <p>Status: <span class="status-live">🟢 Live</span></p>
-  <p>Deployment: Linux | Apache | MySQL</p>
+        <div class="col-md-6 col-lg-4">
+            <div class="project-card">
+                <h4 class="text-white mb-3">RESTful API Gateway</h4>
+                <p class="small">High-performance API layer for mobile integrations, featuring rate limiting, validation, and structured JSON responses.</p>
+                <div class="tech-stack mb-4">
+                    <span>Laravel 10</span> <span>REST API</span> <span>JSON</span>
+                </div>
+                <a href="https://github.com/Dileepkumarpatelpalamu" class="btn-git">Source Code</a>
+            </div>
+        </div>
 
-  <h3>Student Management API</h3>
-  <p>Status: <span class="status-dev">🟡 Development</span></p>
-  <p>Deployment: PHP | MySQL | Local/Docker</p>
+        <div class="col-md-6 col-lg-4">
+            <div class="project-card">
+                <h4 class="text-white mb-3">Inventory Sync Tool</h4>
+                <p class="small">Database optimization project that handles bulk data management and backup processes for transport operations.</p>
+                <div class="tech-stack mb-4">
+                    <span>MySQL</span> <span>SQL Tuning</span> <span>PHP</span>
+                </div>
+                <a href="https://github.com/Dileepkumarpatelpalamu" class="btn-git">Source Code</a>
+            </div>
+        </div>
+    </div>
+</main>
 
-  <h2>Deployment Process</h2>
-  <ol>
-    <li>Push code to GitHub</li>
-    <li>Pull on server</li>
-    <li>Configure environment</li>
-    <li>Database update</li>
-    <li>Restart server</li>
-  </ol>
-
-  <h2>Contact</h2>
-  <p>
-    📧 Email: your-email@gmail.com <br>
-    💼 LinkedIn: linkedin.com/in/dileepkpatel
-  </p>
-</div>
+<footer class="text-center py-5 border-top border-secondary mt-5">
+    <p class="small mb-0">© 2025 Dileep Patel | Built for Scalability</p>
+</footer>
 
 </body>
 </html>
