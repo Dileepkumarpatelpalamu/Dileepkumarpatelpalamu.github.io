@@ -3,298 +3,276 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dileep Kumar Patel | Senior PHP Backend Developer</title>
+    <title>Dileep Kumar Patel | Professional Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --primary: #00d2ff;
-            --secondary: #0081ff;
-            --bg-dark: #0a0c10;
-            --card-bg: #161b22;
+            --accent: #00d2ff;
+            --bg: #0d1117;
+            --card: #161b22;
             --border: #30363d;
             --text-main: #e6edf3;
             --text-dim: #8b949e;
         }
 
         body {
-            background-color: var(--bg-dark);
+            background-color: var(--bg);
             color: var(--text-main);
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            margin: 0; padding: 0;
+            font-family: 'Outfit', sans-serif;
+            line-height: 1.6;
         }
 
-        /* High Visibility Header */
-        .hero-banner {
-            padding: 140px 0 80px;
-            background: radial-gradient(circle at 0% 0%, rgba(0, 210, 255, 0.08) 0%, transparent 40%),
-                        radial-gradient(circle at 100% 100%, rgba(0, 129, 255, 0.08) 0%, transparent 40%);
-            border-bottom: 1px solid var(--border);
+        .code-font { font-family: 'Fira Code', monospace; }
+
+        /* Navigation */
+        .navbar { background: rgba(13, 17, 23, 0.9); border-bottom: 1px solid var(--border); backdrop-filter: blur(10px); }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            background: radial-gradient(circle at 10% 20%, rgba(0, 210, 255, 0.1) 0%, transparent 40%);
         }
 
-        .dev-badge {
-            display: inline-block;
-            padding: 6px 16px;
-            background: rgba(0, 210, 255, 0.1);
-            color: var(--primary);
-            border: 1px solid var(--primary);
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-
-        /* Detailed Experience Cards */
-        .experience-card {
-            background: var(--card-bg);
+        /* Sidebar Like Skill Section */
+        .skill-group {
+            background: var(--card);
             border: 1px solid var(--border);
             border-radius: 12px;
-            padding: 35px;
-            margin-bottom: 30px;
-            transition: 0.3s ease;
-        }
-        .experience-card:hover { border-color: var(--primary); background: #1c2128; }
-
-        /* Project Grid Visibility */
-        .project-box {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 25px;
+            padding: 20px;
             height: 100%;
-            display: flex;
-            flex-direction: column;
         }
-        .tech-pill {
-            background: #21262d;
-            color: var(--primary);
+
+        /* Work Experience Styling */
+        .exp-card {
+            border-left: 3px solid var(--accent);
+            background: var(--card);
+            padding: 30px;
+            border-radius: 0 12px 12px 0;
+            margin-bottom: 30px;
+            transition: 0.3s;
+        }
+        .exp-card:hover { transform: scale(1.01); background: #1c2128; }
+
+        /* Project Section */
+        .project-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 30px;
+        }
+
+        .badge-tech {
+            background: rgba(0, 210, 255, 0.1);
+            color: var(--accent);
+            border: 1px solid var(--accent);
             padding: 4px 12px;
             border-radius: 4px;
-            font-size: 0.75rem;
-            border: 1px solid var(--border);
-            margin-right: 8px;
-            margin-bottom: 8px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
             display: inline-block;
         }
 
-        /* Stats Section */
-        .stats-grid {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 40px;
-            margin-top: -60px;
-            position: relative;
-            z-index: 10;
-        }
+        .contact-link { color: var(--text-dim); text-decoration: none; transition: 0.3s; }
+        .contact-link:hover { color: var(--accent); }
 
-        .section-title {
-            font-size: 2rem;
-            font-weight: 800;
-            margin-bottom: 40px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .section-title::after { content: ""; height: 2px; flex-grow: 1; background: var(--border); }
-
-        .btn-cta {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white; font-weight: 700; border: none; padding: 14px 35px;
-            border-radius: 8px; text-decoration: none; display: inline-block;
-        }
-
-        .code-snippet {
-            background: #010409;
-            padding: 20px;
-            border-radius: 8px;
-            font-family: 'Fira Code', monospace;
-            font-size: 0.9rem;
-            color: #7ee787;
-            border: 1px solid var(--border);
-        }
+        h2.section-header { font-weight: 800; color: #fff; margin-bottom: 40px; border-bottom: 2px solid var(--border); padding-bottom: 10px; }
     </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top px-3">
-    <div class="container border-bottom border-secondary pb-2">
-        <a class="navbar-brand fw-bold" href="#">DILEEP<span class="text-primary">.dev</span></a>
-        <div class="ms-auto d-none d-md-flex gap-4">
-            <a href="#experience" class="text-white text-decoration-none small">Experience</a>
-            <a href="#projects" class="text-white text-decoration-none small">Projects</a>
-            <a href="#skills" class="text-white text-decoration-none small">Skills</a>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold code-font" href="#">DILEEP_PATEL.php</a>
+        <div class="ms-auto d-flex gap-3">
+            <a href="mailto:pateldileep51@gmail.com" class="btn btn-outline-info btn-sm">Email Me</a>
         </div>
     </div>
 </nav>
 
-<section class="hero-banner">
+<header class="hero">
     <div class="container">
-        <div class="row">
+        <div class="row align-items-center">
             <div class="col-lg-8">
-                <span class="dev-badge">INTERMEDIATE BACKEND ENGINEER</span>
-                <h1 class="display-3 fw-extrabold mb-3">Dileep Kumar Patel</h1>
-                <p class="fs-5 text-dim mb-4" style="max-width: 700px;">
-                    Specializing in building robust **CRM ecosystems, RESTful APIs, and Scalable Databases**. 
-                    With over 3.5 years of experience, I bridge the gap between complex business logic and efficient backend architecture.
-                </p>
-                <div class="d-flex flex-wrap gap-3">
-                    <a href="mailto:pateldileep51@gmail.com" class="btn-cta">Download Resume <i class="fas fa-download ms-2"></i></a>
-                    <a href="https://github.com/Dileepkumarpatelpalamu" target="_blank" class="btn btn-outline-light px-4 py-3 border-secondary">
-                        <i class="fab fa-github me-2"></i> GitHub Profile
-                    </a>
+                <h1 class="display-3 fw-bold mb-2">DILEEP KUMAR PATEL</h1>
+                <p class="h4 text-primary mb-4">PHP Backend Developer | Laravel | MySQL | REST APIs</p>
+                <div class="d-flex flex-wrap gap-4 text-dim mb-4">
+                    <span><i class="fas fa-map-marker-alt me-2"></i>Noida, Uttar Pradesh</span>
+                    <span><i class="fas fa-phone me-2"></i>+91-9304911556</span>
+                    <span><i class="fas fa-envelope me-2"></i>pateldileep51@gmail.com</span>
+                </div>
+                <div class="p-4 bg-dark rounded border border-secondary">
+                    <h5 class="text-white mb-3">Professional Summary</h5>
+                    <p class="mb-0 text-dim">Intermediate <strong>PHP Backend Developer</strong> with <strong>3+ years of professional experience</strong> in building and maintaining <strong>CRM-based backend systems</strong> and database-driven web applications. Strong experience in Core PHP, Laravel, REST API development, authentication, RBAC, audit logs, and MySQL optimization. Actively involved in production bug fixing, performance improvements, and legacy system enhancements.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="py-5">
+    <div class="container">
+        <h2 class="section-header">Core Technical Skills</h2>
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="skill-group">
+                    <h6 class="text-white fw-bold mb-3">Backend Development</h6>
+                    <ul class="list-unstyled small text-dim">
+                        <li>• Core PHP / Laravel</li>
+                        <li>• REST API Development</li>
+                        <li>• Auth (Login/Reg)</li>
+                        <li>• JWT & RBAC</li>
+                        <li>• Audit Logs & Tracking</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="skill-group">
+                    <h6 class="text-white fw-bold mb-3">Databases</h6>
+                    <ul class="list-unstyled small text-dim">
+                        <li>• MySQL / PostgreSQL</li>
+                        <li>• SQL Query Optimization</li>
+                        <li>• Database Design</li>
+                        <li>• Relationships</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="skill-group">
+                    <h6 class="text-white fw-bold mb-3">Tools & Libraries</h6>
+                    <ul class="list-unstyled small text-dim">
+                        <li>• Git / GitHub</li>
+                        <li>• Postman (API Testing)</li>
+                        <li>• Bootstrap & jQuery</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="skill-group">
+                    <h6 class="text-white fw-bold mb-3">Deployment</h6>
+                    <ul class="list-unstyled small text-dim">
+                        <li>• Linux Server Basics</li>
+                        <li>• AWS EC2 & S3 (Basic)</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<div class="container">
-    <div class="stats-grid">
-        <div class="row g-4 text-center">
-            <div class="col-md-3 border-end border-secondary">
-                <h2 class="fw-bold text-primary mb-1">3.5+</h2>
-                <p class="text-dim small mb-0">YEARS OF CODING</p>
-            </div>
-            <div class="col-md-3 border-end border-secondary">
-                <h2 class="fw-bold text-primary mb-1">5+</h2>
-                <p class="text-dim small mb-0">LIVE PROJECTS</p>
-            </div>
-            <div class="col-md-3 border-end border-secondary">
-                <h2 class="fw-bold text-primary mb-1">MCA</h2>
-                <p class="text-dim small mb-0">MASTER'S GRADUATE</p>
-            </div>
-            <div class="col-md-3">
-                <h2 class="fw-bold text-primary mb-1">Noida</h2>
-                <p class="text-dim small mb-0">LOCATION</p>
-            </div>
-        </div>
-    </div>
-</div>
 
-<section id="projects" class="py-5 mt-5">
+
+<section class="py-5">
     <div class="container">
-        <h2 class="section-title">Technical Projects Gallery</h2>
-        
-        <div class="experience-card">
-            <div class="row">
-                <div class="col-lg-7">
-                    <h3 class="text-white fw-bold">User Management & Auth REST API</h3>
-                    <p class="text-primary fw-bold mb-3">Core Solution for Scalable User Operations</p>
-                    <p class="text-dim">
-                        Developed a comprehensive RESTful API system to handle enterprise-level user management. 
-                        This project focuses on the security and efficiency of data handling between client and server.
-                    </p>
-                    <div class="row mt-4">
-                        <div class="col-md-6">
-                            <h6 class="text-white fw-bold"><i class="fas fa-shield-alt text-primary me-2"></i>Security Implementation</h6>
-                            <ul class="text-dim small">
-                                <li>Prepared Statements to prevent SQL Injection</li>
-                                <li>Password Hashing (Bcrypt) for data protection</li>
-                                <li>Auth Token Validation logic</li>
-                            </ul>
-                        </div>
-                        <div class="col-md-6">
-                            <h6 class="text-white fw-bold"><i class="fas fa-cogs text-primary me-2"></i>Core Architecture</h6>
-                            <ul class="text-dim small">
-                                <li>Full CRUD lifecycle (Create, Read, Update, Delete)</li>
-                                <li>JSON-based structured API responses</li>
-                                <li>Standard HTTP Error Code handling (404, 500, etc.)</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="mt-4">
-                        <span class="tech-pill">PHP 8.2</span>
-                        <span class="tech-pill">MySQL</span>
-                        <span class="tech-pill">REST Architecture</span>
-                        <span class="tech-pill">OOPs</span>
-                    </div>
-                    <a href="https://github.com/Dileepkumarpatelpalamu/php-restapi-user-management" target="_blank" class="btn btn-primary mt-3 btn-sm">
-                        Source Code <i class="fas fa-external-link-alt ms-2"></i>
-                    </a>
-                </div>
-                <div class="col-lg-5 mt-4 mt-lg-0 d-flex flex-column justify-content-center">
-                    <div class="code-snippet">
-                        <span style="color: #ff7b72;">POST</span> /api/user/create<br>
-                        <span style="color: #79c0ff;">{</span><br>
-                        &nbsp;&nbsp;"name": <span style="color: #a5d6ff;">"Dileep Patel"</span>,<br>
-                        &nbsp;&nbsp;"email": <span style="color: #a5d6ff;">"patel@example.com"</span>,<br>
-                        &nbsp;&nbsp;"role": <span style="color: #a5d6ff;">"Admin"</span><br>
-                        <span style="color: #79c0ff;">}</span><br>
-                        <span style="color: #8b949e;">// Response: 201 Created</span>
-                    </div>
-                </div>
+        <h2 class="section-header">Professional Experience</h2>
+
+        <div class="exp-card">
+            <div class="d-flex justify-content-between flex-wrap mb-3">
+                <h4 class="text-white fw-bold">PHP Backend Developer</h4>
+                <span class="badge bg-primary">Oct 2021 – Jul 2025</span>
+            </div>
+            <p class="text-primary fw-bold mb-3">C-Zentrix Pvt. Ltd.</p>
+            <ul class="text-dim">
+                <li>Worked on a <strong>CRM-based application</strong>, handling core backend modules</li>
+                <li>Implemented secure <strong>Login and Registration</strong> workflows</li>
+                <li>Designed and maintained <strong>Role-Based Access Control (RBAC)</strong> for multiple user roles</li>
+                <li>Developed <strong>Audit Log modules</strong> to track user activities and system changes</li>
+                <li>Built and enhanced <strong>Ticket Management Dashboard</strong> for issue tracking</li>
+                <li>Worked on <strong>Lead Management Dashboard</strong>, including lead flow and status handling</li>
+                <li>Fixed production bugs and resolved performance issues</li>
+                <li>Upgraded frontend libraries including <strong>Bootstrap and jQuery</strong> for better UI stability</li>
+            </ul>
+            <div class="mt-3">
+                <span class="badge-tech">PHP</span> <span class="badge-tech">Laravel</span> <span class="badge-tech">MySQL</span> <span class="badge-tech">REST APIs</span> <span class="badge-tech">JWT</span>
             </div>
         </div>
 
-        <h2 class="section-title mt-5" id="experience">Professional Experience</h2>
-        
-        <div class="experience-card">
-            <div class="d-flex justify-content-between align-items-start mb-4">
-                <div>
-                    <h4 class="text-white mb-1">PHP Backend Developer</h4>
-                    <p class="text-primary fw-bold mb-0">C-Zentrix Pvt. Ltd. | Noida, UP</p>
-                </div>
-                <span class="text-dim code-font">Oct 2021 — Jul 2025</span>
+        <div class="exp-card">
+            <div class="d-flex justify-content-between flex-wrap mb-3">
+                <h4 class="text-white fw-bold">PHP & MySQL Developer</h4>
+                <span class="badge bg-secondary">Jul 2017 – Dec 2018</span>
             </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <p class="text-dim">As a core member of the backend team, I was responsible for maintaining and enhancing high-traffic CRM modules.</p>
-                    <ul class="text-dim small">
-                        <li class="mb-2"><b>CRM Module Development:</b> Engineered backend logic for Lead and Ticket Management Dashboards.</li>
-                        <li class="mb-2"><b>Security Architecture:</b> Implemented Role-Based Access Control (RBAC) and Audit Logs for system compliance.</li>
-                    </ul>
-                </div>
-                <div class="col-md-6 border-start border-secondary ps-4">
-                    <ul class="text-dim small">
-                        <li class="mb-2"><b>Performance Optimization:</b> Refactored MySQL queries reducing data retrieval time by 30%.</li>
-                        <li class="mb-2"><b>Maintenance:</b> Proactively fixed production bugs and upgraded critical frontend libraries (Bootstrap/jQuery).</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="experience-card">
-            <div class="d-flex justify-content-between align-items-start mb-4">
-                <div>
-                    <h4 class="text-white mb-1">PHP & MySQL Developer</h4>
-                    <p class="text-primary fw-bold mb-0">DTO, Palamu | Jharkhand</p>
-                </div>
-                <span class="text-dim code-font">Jul 2017 — Dec 2018</span>
-            </div>
-            <p class="text-dim">Managed core data management systems and automated reporting tools using Core PHP.</p>
+            <p class="text-primary fw-bold mb-3">DTO, Palamu</p>
+            <ul class="text-dim">
+                <li>Developed Core PHP modules for CRUD operations and reporting</li>
+                <li>Designed MySQL database schemas and optimized SQL queries</li>
+                <li>Implemented structured data management and backup processes</li>
+                <li>Provided application support and resolved functional bugs</li>
+            </ul>
         </div>
     </div>
 </section>
 
-<footer class="py-5 border-top border-secondary bg-black text-center">
+
+
+<section class="py-5">
     <div class="container">
-        <h2 class="fw-bold text-white mb-4">Contact Information</h2>
-        <div class="row justify-content-center g-4 mb-5">
-            <div class="col-md-3">
-                <div class="p-3 border border-secondary rounded">
-                    <i class="fas fa-envelope text-primary mb-2"></i><br>
-                    <small class="text-dim">pateldileep51@gmail.com</small>
+        <h2 class="section-header">Key Projects</h2>
+        
+        <div class="project-card mb-4">
+            <div class="row">
+                <div class="col-md-8">
+                    <h4 class="text-white fw-bold">Student Management System</h4>
+                    <p class="text-dim">Developed a complete backend system to manage students, roles, and academic records using PHP/Laravel.</p>
+                    <ul class="text-dim small">
+                        <li>Implemented authentication and role-based access control</li>
+                        <li>Designed REST APIs and MySQL database schema</li>
+                        <li>Focused on backend validation, clean architecture, and performance</li>
+                    </ul>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="p-3 border border-secondary rounded">
-                    <i class="fas fa-phone text-primary mb-2"></i><br>
-                    <small class="text-dim">+91-9304911556</small>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="p-3 border border-secondary rounded">
-                    <i class="fab fa-linkedin text-primary mb-2"></i><br>
-                    <small class="text-dim">Dileep Patel</small>
+                <div class="col-md-4 text-md-end">
+                    <a href="https://github.com/Dileepkumarpatelpalamu" class="btn btn-outline-info">View GitHub</a>
                 </div>
             </div>
         </div>
-        <p class="text-dim small">© 2025 Dileep Kumar Patel | Built with PHP, Laravel & Dedication</p>
+
+        <div class="project-card">
+            <div class="row">
+                <div class="col-md-8">
+                    <h4 class="text-white fw-bold">PHP REST API User Management</h4>
+                    <p class="text-dim">Comprehensive user management system with secure authentication, profile handling, and structured JSON responses.</p>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <a href="https://github.com/Dileepkumarpatelpalamu/php-restapi-user-management" class="btn btn-outline-info">View Source</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5 bg-dark border-top border-secondary">
+    <div class="container">
+        <h2 class="section-header">Education</h2>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="p-4 bg-black rounded border border-secondary">
+                    <h5 class="text-white">Master of Computer Applications (MCA)</h5>
+                    <p class="text-primary mb-0">Jaipur National University — 2018</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="p-4 bg-black rounded border border-secondary">
+                    <h5 class="text-white">Bachelor of Computer Applications (BCA)</h5>
+                    <p class="text-primary mb-0">GLA College — 2016</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="py-5 text-center">
+    <div class="container">
+        <p class="text-dim">© 2025 Dileep Kumar Patel | Searching for Intermediate Backend Developer roles.</p>
+        <div class="d-flex justify-content-center gap-4 mt-3">
+            <a href="https://github.com/Dileepkumarpatelpalamu" class="contact-link fs-4"><i class="fab fa-github"></i></a>
+            <a href="#" class="contact-link fs-4"><i class="fab fa-linkedin"></i></a>
+        </div>
     </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
